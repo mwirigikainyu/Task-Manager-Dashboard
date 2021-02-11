@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React, { useState } from "react";
 import { FaTrash } from "react-icons/fa";
+import { File } from 'react-kawaii'
 
 //Styled Components & Css
 const Container = styled.section`
@@ -8,6 +9,9 @@ const Container = styled.section`
   grid-template-rows: 150px auto;
   margin-right: 30px;
   margin-top: 20px;
+  .svg{
+    text-align: center;
+  }
 `;
 const Task = styled.form`
   padding: 20px;
@@ -49,8 +53,8 @@ export default function Tasks(props) {
       todos.map((todo, i) =>
         index === i
           ? {
-              ...todo,
-            }
+            ...todo,
+          }
           : todo
       )
     );
@@ -74,9 +78,10 @@ export default function Tasks(props) {
             setTask({ text: e.target.value, completed: false });
           }}
         ></input>
+        {!todos.length && <File className="svg" size={420} mood="blissful" color="#7367f0" />}
         {todos.map((item, index) => {
           return !item.completed ? (
-            <TaskItem key={index} onClick={() => {}}>
+            <TaskItem key={index} onClick={() => { }}>
               <p>{item.text}</p>
               <FaTrash
                 className={"delete"}
