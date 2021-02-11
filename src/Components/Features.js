@@ -30,6 +30,14 @@ const MenuItem = styled.p`
   padding: 10px;
   margin: 5px 16px;
   color: gray;
+  border-radius: 10px;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: #7367f0;
+    color: white;
+    transition: ease-in-out 0.1s;
+  }
 `;
 
 export default function Features() {
