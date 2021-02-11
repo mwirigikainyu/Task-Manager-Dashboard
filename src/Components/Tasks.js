@@ -78,7 +78,7 @@ export default function Tasks(props) {
             setTask({ text: e.target.value, completed: false });
           }}
         ></input>
-        {!todos.length && <File className="svg" size={420} mood="blissful" color="#7367f0" />}
+        {!todos.length && <File className="svg floating" size={420} mood="blissful" color="#7367f0" />}
         {todos.map((item, index) => {
           return !item.completed ? (
             <TaskItem key={index} onClick={() => { }}>
